@@ -3,13 +3,19 @@ import style from './Cart.module.css'
 import { CartContext } from '../../stores/CartContext'
 import Loading from '../Loading';
 import { Link } from 'react-router-dom';
+import EmptyCart from '../../EmptyCart';
 
 export default function Cart() {
   const {cart, updateItemQuantity, removeItemFromCart} = useContext(CartContext);
+  console.log(cart?.numOfCartItems);
+  
   
 
   
   return <>
+  
+  {cart?.numOfCartItems === 0 ? <EmptyCart /> : <div>
+    
   {cart? <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
   <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
     <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -71,10 +77,12 @@ export default function Cart() {
     </tbody>
   </table>
 </div> : <Loading />}
-<div className='flex pt-4 justify-between'>
+    </div>}
+ {cart?.numOfCartItems > 0 && <div className='flex pt-4 justify-between'>
 <h2>Total Price</h2>
 <Link to='/checkout'><button>Pay now</button></Link>
-</div>
+</div>}   
+
   
     
   

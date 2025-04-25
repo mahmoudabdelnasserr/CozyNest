@@ -35,6 +35,7 @@ export default function RecentProducts() {
         <div className=" flex flex-col md:flex-row flex-wrap gap-y-4 py-8 justify-center ">
           {data.data.data.map((product) => (
             <div key={product.id} className="w-full md:w-1/6 p-4">
+              
               <div className="product p-2 rounded-lg relative">
                 {wishlistProducts?.find((wishlistedProduct) => wishlistedProduct.id === product.id) ? (
 

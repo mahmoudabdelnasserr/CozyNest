@@ -56,12 +56,9 @@ export default function Register() {
     localStorage.setItem("token", data.token);
     setUserToken(data.token);
     navigate('/home');
-
-    console.log(token);
   }
   return (
     <>
-      <h2>Register</h2>
       <form onSubmit={formik.handleSubmit} className="max-w-md mx-auto">
         <div className="grid md:grid-cols-1 md:gap-4">
           <div className="relative z-0 w-full mb-5 group">
