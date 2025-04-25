@@ -59,7 +59,7 @@ export default function Register() {
   }
   return (
     <>
-      <form onSubmit={formik.handleSubmit} className="max-w-md mx-auto">
+      <form onSubmit={formik.handleSubmit} className="w-full mx-auto p-4 ">
         <div className="grid md:grid-cols-1 md:gap-4">
           <div className="relative z-0 w-full mb-5 group">
             <input
